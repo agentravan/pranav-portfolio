@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranav Jain | Sales & Administration Executive</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1a4d2e; /* Allied Medical Theme Green */
+            --secondary: #2e7d32;
+            --dark: #121212;
+            --light: #ffffff;
+            --gray: #f4f7f6;
+            --text: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(26,77,46,0.95) 0%, rgba(0,0,0,0.9) 100%), 
+                        url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            color: var(--secondary);
+            font-weight: 400;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        /* --- Stats Section --- */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 50px 8%;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        /* --- About Section --- */
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* --- Experience Cards --- */
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .exp-card {
+            background: var(--gray);
+            padding: 40px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            transition: 0.3s;
+        }
+
+        .exp-card:hover {
+            background: white;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+        }
+
+        .exp-info h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .company {
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .exp-card ul {
+            list-style: none;
+        }
+
+        .exp-card li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .exp-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+
+        /* --- Skills Section --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--secondary);
+        }
+
+        /* --- Contact --- */
+        .contact-section {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            border-radius: 30px;
+            margin: 50px 8%;
+        }
+
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .exp-card { flex-direction: column; }
+            .hero-content h1 { font-size: 2.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">PRANAV JAIN</a>
+        <div class="nav-links">
+            <a href="#about">Profile</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Expertise</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content" data-aos="zoom-in">
+            <p>MNC Operations & Administration</p>
+            <h1>Pranav Jain</h1>
+            <div class="btn-container">
+                <a href="#contact" class="btn btn-primary">Let's Talk</a>
+                <!-- Update the href below to match your PDF name on GitHub -->
+                <a href="Pranav_Jain_Resume.pdf" class="btn btn-outline" target="_blank">Download CV</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats">
+        <div><h3>2+ Years</h3><p>Professional Experience</p></div>
+        <div><h3>100%</h3><p>CRM Accuracy</p></div>
+        <div><h3>20%</h3><p>Process Efficiency Gained</p></div>
+        <div><h3>Global</h3><p>Logistics Managed</p></div>
+    </div>
+
+    <section id="about">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Professional Profile</h2>
+            <p style="max-width: 800px; margin: auto;">Focused on driving business growth through meticulous sales administration and operational excellence. Expertise in Zoho CRM, global travel logistics, and financial reconciliation for large-scale manufacturers and medical suppliers.</p>
+        </div>
+    </section>
+
+    <section id="experience" style="background: #fcfcfc;">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Work History</h2>
+        </div>
+        
+        <div class="card-container">
+            <!-- Allied Medical -->
+            <div class="exp-card" data-aos="fade-right">
+                <div class="exp-info">
+                    <h3>Sales & Administration Executive</h3>
+                    <p class="company">Allied Medical Limited | Oct 2024 - Present</p>
+                    <ul>
+                        <li>Streamlined travel management systems, reducing coordination time by 20%.</li>
+                        <li>Manage end-to-end sales lead lifecycles via Zoho CRM and IndiaMART.</li>
+                        <li>Coordinate global travel logistics and fleet monitoring for senior management.</li>
+                    </ul>
+                </div>
+                <div class="location"><i class="fas fa-map-marker-alt"></i> Gurugram</div>
+            </div>
+
+            <!-- GSB Footwear -->
+            <div class="exp-card" data-aos="fade-left">
+                <div class="exp-info">
+                    <h3>Accounts Executive</h3>
+                    <p class="company">GSB Footwear Pvt. Ltd | 2023</p>
+                    <ul>
+                        <li>Executed daily ledger maintenance and bank reconciliations.</li>
+                        <li>Maintained financial integrity for high-volume footwear production cycles.</li>
+                        <li>Prepared GST-compliant trial balances and financial summaries.</li>
+                    </ul>
+                </div>
+                <div class="location"><i class="fas fa-map-marker-alt"></i> Bahadurgarh</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Core Expertise</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-box" data-aos="flip-left">
+                <i class="fas fa-desktop" style="font-size: 2rem; color: var(--secondary);"></i>
+                <h4 style="margin-top: 15px;">CRM & Lead Management</h4>
+                <p>Zoho CRM, AIMS, and IndiaMART lead tracking and conversion monitoring.</p>
+            </div>
+            <div class="skill-box" data-aos="flip-left" data-aos-delay="100">
+                <i class="fas fa-globe" style="font-size: 2rem; color: var(--secondary);"></i>
+                <h4 style="margin-top: 15px;">Travel & Logistics</h4>
+                <p>MakeMyTrip MyBiz corporate booking and GPS-based fleet management.</p>
+            </div>
+            <div class="skill-box" data-aos="flip-left" data-aos-delay="200">
+                <i class="fas fa-calculator" style="font-size: 2rem; color: var(--secondary);"></i>
+                <h4 style="margin-top: 15px;">Finance & Accounts</h4>
+                <p>GST compliance, ledger maintenance, and corporate expense reporting.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section" data-aos="zoom-in">
+        <h2>Get In Touch</h2>
+        <p>Available for high-impact roles in Administration & Sales Operations.</p>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+919149262139">+91 9149262139</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:pranavj2703@gmail.com">pranavj2703@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Pranav Jain. All Rights Reserved.</p>
+    </footer>
+
+    <!-- AOS Animation Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>
